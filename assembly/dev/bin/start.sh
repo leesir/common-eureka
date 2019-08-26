@@ -49,7 +49,7 @@ fi
 JAVA_MEM_OPTS=""
 BITS=`java -version 2>&1 | grep -i 64-bit`
 
-JAVA_MEM_OPTS=" -server -Xmx256M -Xms256M -Xmn128M -Xss128k -XX:+UseConcMarkSweepGC -XX:+UseCMSInitiatingOccupancyOnly -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=5 -XX:CMSInitiatingOccupancyFraction=80 -XX:+UseParNewGC -XX:+DisableExplicitGC -XX:MaxTenuringThreshold=10 -Xnoclassgc "
+JAVA_MEM_OPTS=" -server -Xmx256M -Xms256M -Xmn128M -Xss256k -XX:+UseConcMarkSweepGC -XX:+UseCMSInitiatingOccupancyOnly -XX:+UseCMSCompactAtFullCollection -XX:CMSFullGCsBeforeCompaction=5 -XX:CMSInitiatingOccupancyFraction=80 -XX:+UseParNewGC -XX:+DisableExplicitGC -XX:MaxTenuringThreshold=10 -Xnoclassgc "
 JAVA_MEM_OPTS="$JAVA_MEM_OPTS -XX:+PrintGCDateStamps -XX:+PrintGCDetails -Xloggc:gc.out"
 JAVA_MEM_OPTS="$JAVA_MEM_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=dump.hprof"
 JAVA_MEM_OPTS="$JAVA_MEM_OPTS -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8"
