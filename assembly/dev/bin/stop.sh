@@ -5,11 +5,7 @@ cd ..
 DEPLOY_DIR=`pwd`
 CONF_DIR=$DEPLOY_DIR/conf
 
-SERVER_NAME=`sed '/dubbo.application.name/!d;s/.*=//' conf/dubbo.properties | tr -d '\r'`
-
-if [ -z "$SERVER_NAME" ]; then
-    SERVER_NAME=`hostname`
-fi
+SERVER_NAME=`hostname`
 
 PIDS=`ps -f | grep java | grep "$CONF_DIR" |awk '{print $2}'`
 if [ -z "$PIDS" ]; then
