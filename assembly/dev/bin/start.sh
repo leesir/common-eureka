@@ -55,7 +55,7 @@ JAVA_MEM_OPTS="$JAVA_MEM_OPTS -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=d
 JAVA_MEM_OPTS="$JAVA_MEM_OPTS -Dfile.encoding=UTF-8 -Dsun.jnu.encoding=UTF-8"
 
 echo -e "Starting the $SERVER_NAME ...\c"
-nohup java $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS -classpath $CONF_DIR:$LIB_JARS com.alibaba.dubbo.container.Main > $STDOUT_FILE 2>&1 &
+nohup java $JAVA_OPTS $JAVA_MEM_OPTS $JAVA_DEBUG_OPTS $JAVA_JMX_OPTS -classpath $CONF_DIR:$LIB_JARS com.derrick.commoneureka.Main > $STDOUT_FILE 2>&1 &
 
 COUNT=0
 while [ $COUNT -lt 1 ]; do    
